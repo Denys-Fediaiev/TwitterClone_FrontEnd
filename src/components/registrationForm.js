@@ -1,35 +1,30 @@
-import React, {useState,setState} from 'react';
-import './style.css'
+import React, {useState} from 'react';
+import {registerUser} from "../api/user";
+import './style.css';
+
 function RegistrationForm() {
 
-    const [firstName, setFirstName] = useState(null);
-    const [lastName, setLastName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
-    const [confirmPassword,setConfirmPassword] = useState(null);
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        dateOfBirth: '',
+    });
 
     const handleInputChange = (e) => {
         const {id , value} = e.target;
-        if(id === "firstName"){
-            setFirstName(value);
-        }
-        if(id === "lastName"){
-            setLastName(value);
-        }
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
-        }
 
+        setFormData(prevState => ({
+            ...prevState,
+            [id]: value,
+        }));
     }
 
     const handleSubmit = () =>{
-        console.log(firstName,lastName,email,password,confirmPassword);
+        console.log(formData);
+        registerUser(formData);
         // let obj = {
         //     firstName : firstName,
         //     lastName:lastName,
@@ -48,29 +43,76 @@ function RegistrationForm() {
     return(
         <div className="form">
             <div className="form-body">
-                <div className="username">
+                <div className="inputWrapper">
                     <label className="form__label" for="firstName">First Name </label>
-                    <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
+                    <input
+                        className="form__input"
+                        type="text"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        id="firstName"
+                        placeholder="First Name"
+                    />
                 </div>
-                <div className="lastname">
-                    <label className="form__label" for="lastName">Last Name </label>
-                    <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
+                <div className="inputWrapper">
+                    <label className="formLabel" htmlFor="dateOfBirth">date Of Birth</label>
+                    <input
+                        className="formInput"
+                        type="text"
+                        value={formData.dateOfBirth}
+                        onChange={handleInputChange}
+                        id="dateOfBirth"
+                        placeholder="date Of Birth"
+                    />
                 </div>
-                <div className="email">
-                    <label className="form__label" for="email">Email </label>
-                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
+                <div className="inputWrapper">
+                    <label className="formLabel" for="lastName">Last Name </label>
+                    <input
+                        type="text"
+                        name=""
+                        id="lastName"
+                        value={formData.lastName}
+                        className="formInput"
+                        onChange = {handleInputChange}
+                        placeholder="LastName"
+                    />
                 </div>
-                <div className="password">
-                    <label className="form__label" for="password">Password </label>
-                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+                <div className="inputWrapper">
+                    <label className="formLabel" for="email">Email </label>
+                    <input
+                        type="email"
+                        id="email"
+                        className="formInput"
+                        value={formData.email}
+                        onChange = {handleInputChange}
+                        placeholder="Email"
+                    />
                 </div>
-                <div className="confirm-password">
-                    <label className="form__label" for="confirmPassword">Confirm Password </label>
-                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
+                <div className="inputWrapper">
+                    <label className="formLabel" for="password">Password </label>
+                    <input
+                        className="formInput"
+                        type="password"
+                        id="password"
+                        value={formData.password}
+                        onChange = {handleInputChange}
+                        placeholder="Password"
+                    />
+                </div>
+                <div className="inputWrapper">
+                    <label className="formLabel" for="confirmPassword">Confirm Password </label>
+                    <input
+                        className="formInput"
+                        type="password"
+                        id="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange = {handleInputChange}
+                        placeholder="Confirm Password"
+                    />
                 </div>
             </div>
             <div class="footer">
-                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>
+                <button onClick={handleSubmit} type="submit" class="btn">Register</button>
             </div>
         </div>
 
