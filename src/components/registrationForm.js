@@ -23,20 +23,7 @@ function RegistrationForm() {
     }
 
     const handleSubmit = () =>{
-        console.log(formData);
         registerUser(formData);
-        // let obj = {
-        //     firstName : firstName,
-        //     lastName:lastName,
-        //     email:email,
-        //     password:password,
-        //     confirmPassword:confirmPassword,
-        // }
-        // const newPostKey = push(child(ref(database), 'posts')).key;
-        // const updates = {};
-        // updates['/' + newPostKey] = obj
-        // return update(ref(database), updates);
-
     }
 
 
@@ -111,11 +98,14 @@ function RegistrationForm() {
                     />
                 </div>
             </div>
-            <div class="footer">
-                <button onClick={handleSubmit} type="submit" class="btn">Register</button>
+            <div id="footer">
+                <button
+                    onClick={handleSubmit}
+                    type="submit"
+                    name="btn">Register
+                </button>
             </div>
         </div>
-
     )
 }
 

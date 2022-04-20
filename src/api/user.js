@@ -1,6 +1,5 @@
 import axios from "axios";
 
 export function registerUser(FormData){
-    axios.post("jdbc:mysql://localhost:3306/?user=root", FormData)
-
+    axios.post("http://localhost:3000", FormData)
 }
