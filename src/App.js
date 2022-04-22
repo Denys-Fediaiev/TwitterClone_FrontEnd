@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/header';
-import RegistrationForm from './components/registrationForm'
+import Header from './components/Header';
+import RegistrationForm from './components/RegistrationForm'
 
 
 
