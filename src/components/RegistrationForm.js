@@ -23,20 +23,7 @@ function RegistrationForm() {
     }
 
     const handleSubmit = () =>{
-        console.log(formData);
         registerUser(formData);
-        // let obj = {
-        //     firstName : firstName,
-        //     lastName:lastName,
-        //     email:email,
-        //     password:password,
-        //     confirmPassword:confirmPassword,
-        // }
-        // const newPostKey = push(child(ref(database), 'posts')).key;
-        // const updates = {};
-        // updates['/' + newPostKey] = obj
-        // return update(ref(database), updates);
-
     }
 
 
@@ -44,9 +31,9 @@ function RegistrationForm() {
         <div className="form">
             <div className="form-body">
                 <div className="inputWrapper">
-                    <label className="form__label" for="firstName">First Name </label>
+                    <label className="formLabel" for="firstName">First Name </label>
                     <input
-                        className="form__input"
+                        className="formInput"
                         type="text"
                         value={formData.firstName}
                         onChange={handleInputChange}
@@ -111,8 +98,11 @@ function RegistrationForm() {
                     />
                 </div>
             </div>
-            <div class="footer">
-                <button onClick={handleSubmit} type="submit" class="btn">Register</button>
+            <div id="footer">
+                <button onClick={handleSubmit}
+                        type="submit"
+                        name="btn">Register
+                </button>
             </div>
         </div>
 
