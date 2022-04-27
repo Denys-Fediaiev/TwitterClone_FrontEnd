@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {registerUser} from "../api/user";
 import './style.css';
+import {Link} from "react-router-dom";
 
 function RegistrationForm() {
 
@@ -104,6 +105,18 @@ function RegistrationForm() {
                         name="btn">Register
                 </button>
             </div>
+            <div>
+                <b>Log in, if you have account</b>
+                <nav
+                    style={{
+                        borderBottom: "solid 1px",
+                        paddingBottom: "1rem",
+                    }}
+                >
+                    <Link to="/LoginForm">Login</Link>
+                </nav>
+            </div>
+
         </div>
 
     )

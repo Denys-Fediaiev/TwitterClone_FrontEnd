@@ -1,20 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
-import RegistrationForm from './components/RegistrationForm'
-import LoginForm from "./components/LoginForm";
+import RegistrationForm from './components/RegistrationForm';
+import React from "react";
 
 
-
-function App() {
+function AppRegister() {
     return (
         <div className="App">
             <Header/>
             <RegistrationForm/>
-            {/*<LoginForm/>*/}
         </div>
     );
 }
 
-export default App;
+export default AppRegister;
 

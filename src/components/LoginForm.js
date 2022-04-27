@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {registerUser} from "../api/user";
+import {loginUser} from "../api/user";
 import './style.css';
+import {Link} from "react-router-dom";
 
 function LoginForm() {
 
@@ -19,7 +20,7 @@ function LoginForm() {
     }
 
     const handleSubmit = () => {
-        registerUser(formData);
+        loginUser(formData);
     }
 
 
@@ -51,8 +52,19 @@ function LoginForm() {
                 <div id="footer">
                     <button onClick={handleSubmit}
                             type="submit"
-                            name="btn">Register
+                            name="btn">Login
                     </button>
+                    <div>
+                        <b>Register, if you don't have account</b>
+                        <nav
+                            style={{
+                                borderBottom: "solid 2px",
+                                paddingBottom: "1rem",
+                            }}
+                        >
+                            <Link to="/">Register</Link>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
