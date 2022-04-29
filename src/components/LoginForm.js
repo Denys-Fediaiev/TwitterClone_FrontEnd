@@ -28,7 +28,7 @@ function LoginForm() {
         <div className="form">
             <div className="form-body">
                 <div className="inputWrapper">
-                    <label className="formLabel" for="firstName">First Name </label>
+                    <label className="formLabel" for="firstName">Email </label>
                     <input
                         className="formInput"
                         type="text"
@@ -39,7 +39,7 @@ function LoginForm() {
                     />
                 </div>
                 <div className="inputWrapper">
-                    <label className="formLabel" htmlFor="dateOfBirth">date Of Birth</label>
+                    <label className="formLabel" htmlFor="dateOfBirth">Password</label>
                     <input
                         className="formInput"
                         type="text"

@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactDOM, {render} from 'react-dom';
 import './index.css';
-import AppRegister from './AppRegister';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import AppLogin from "./AppLogin";
+
+import App from "./App";
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<AppRegister />}/>
-            <Route path="/LoginForm" element={<AppLogin />} />
-        </Routes>
-
-    </BrowserRouter>,
+    <App />,
   document.getElementById('root')
 );
 

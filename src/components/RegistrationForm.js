@@ -113,7 +113,7 @@ function RegistrationForm() {
                         paddingBottom: "1rem",
                     }}
                 >
-                    <Link to="/LoginForm">Login</Link>
+                    <Link to="/Login">Login</Link>
                 </nav>
             </div>
 
@@ -121,5 +121,4 @@ function RegistrationForm() {
 
     )
 }
-
 export default RegistrationForm
