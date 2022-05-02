@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "../LoggedPage.css"
 
 
@@ -6,15 +6,17 @@ function LoggedPage(){
     const [formData, setFormData] = useState({
         post: '',
     });
+    useEffect(() => { console.log(formData); }, [formData]);
 
     const handleInputChange = (e) => {
         const {id, value} = e.target;
-
+        console.log("id:",id);
         setFormData(prevState => ({
             ...prevState,
             [id]: value,
         }));
     }
+
 
     const handleSubmit = () =>{
         //TODO сделать функционал кнопки
@@ -26,6 +28,7 @@ function LoggedPage(){
             <input type="text"
                    className="formInput"
                    value={formData.post}
+                   id={"post"}
                    onChange={handleInputChange}
             />
             <button onClick={handleSubmit}
