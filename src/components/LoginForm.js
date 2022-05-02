@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {registerUser} from "../api/user";
+import {loginUser} from "../api/user";
 import './style.css';
+import {Link} from "react-router-dom";
 
 function LoginForm() {
 
@@ -19,7 +20,7 @@ function LoginForm() {
     }
 
     const handleSubmit = () => {
-        registerUser(formData);
+        loginUser(formData);
     }
 
 
@@ -27,32 +28,43 @@ function LoginForm() {
         <div className="form">
             <div className="form-body">
                 <div className="inputWrapper">
-                    <label className="formLabel" for="firstName">First Name </label>
+                    <label className="formLabel" for="Email">Email </label>
                     <input
                         className="formInput"
                         type="text"
-                        value={formData.firstName}
+                        value={formData.email}
                         onChange={handleInputChange}
-                        id="firstName"
-                        placeholder="First Name"
+                        id="email"
+                        placeholder="Email"
                     />
                 </div>
                 <div className="inputWrapper">
-                    <label className="formLabel" htmlFor="dateOfBirth">date Of Birth</label>
+                    <label className="formLabel" htmlFor="Password">Password</label>
                     <input
                         className="formInput"
                         type="text"
-                        value={formData.dateOfBirth}
+                        value={formData.password}
                         onChange={handleInputChange}
-                        id="dateOfBirth"
-                        placeholder="date Of Birth"
+                        id="password"
+                        placeholder="Password"
                     />
                 </div>
                 <div id="footer">
                     <button onClick={handleSubmit}
                             type="submit"
-                            name="btn">Register
+                            name="btn">Login
                     </button>
+                    <div>
+                        <b>Register, if you don't have account</b>
+                        <nav
+                            style={{
+                                borderBottom: "solid 2px",
+                                paddingBottom: "1rem",
+                            }}
+                        >
+                            <Link to="/">Register</Link>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

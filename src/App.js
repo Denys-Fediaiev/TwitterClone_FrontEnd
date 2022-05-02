@@ -1,20 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header';
-import RegistrationForm from './components/RegistrationForm'
-import LoginForm from "./components/LoginForm";
+import React from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import RegistrationPage from "./pages/RegistrationPage";
+import LoginPage from "./pages/LoginPage";
+import LoggedPage from "./pages/LoggedPage";
 
+function App(){
+    return(
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<RegistrationPage />}/>
+                <Route path="/Login" element={<LoginPage />} />
+                <Route path="/Logged" element={<LoggedPage />} />
+            </Routes>
 
-
-function App() {
-    return (
-        <div className="App">
-            <Header/>
-            <RegistrationForm/>
-            {/*<LoginForm/>*/}
-        </div>
+        </BrowserRouter>
     );
 }
 
-export default App;
-
+export default App
