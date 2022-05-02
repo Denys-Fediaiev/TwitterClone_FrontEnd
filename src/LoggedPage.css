@@ -1,0 +1,14 @@
+.post_container h1{
+    color: #61dafb;
+    left: 50%;
+}
+
+.post_container input{
+    position:absolute;
+    min-width:35%;
+    height: 10%;
+    top:17%;
+    left:0%;
+    z-index:10;
+    background-color:#CCC;
+    border: 1px solid grey;}

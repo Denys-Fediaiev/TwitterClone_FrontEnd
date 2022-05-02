@@ -28,25 +28,25 @@ function LoginForm() {
         <div className="form">
             <div className="form-body">
                 <div className="inputWrapper">
-                    <label className="formLabel" for="firstName">Email </label>
+                    <label className="formLabel" for="Email">Email </label>
                     <input
                         className="formInput"
                         type="text"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        id="firstName"
-                        placeholder="First Name"
+                        id="Email"
+                        placeholder="Email"
                     />
                 </div>
                 <div className="inputWrapper">
-                    <label className="formLabel" htmlFor="dateOfBirth">Password</label>
+                    <label className="formLabel" htmlFor="Password">Password</label>
                     <input
                         className="formInput"
                         type="text"
                         value={formData.dateOfBirth}
                         onChange={handleInputChange}
-                        id="dateOfBirth"
-                        placeholder="date Of Birth"
+                        id="Password"
+                        placeholder="Password"
                     />
                 </div>
                 <div id="footer">
