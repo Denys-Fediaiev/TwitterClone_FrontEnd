@@ -6,11 +6,9 @@ function LoggedPage(){
     const [formData, setFormData] = useState({
         post: '',
     });
-    useEffect(() => { console.log(formData); }, [formData]);
 
     const handleInputChange = (e) => {
         const {id, value} = e.target;
-        console.log("id:",id);
         setFormData(prevState => ({
             ...prevState,
             [id]: value,
@@ -28,7 +26,7 @@ function LoggedPage(){
             <input type="text"
                    className="formInput"
                    value={formData.post}
-                   id={"post"}
+                   id="post"
                    onChange={handleInputChange}
             />
             <button onClick={handleSubmit}
