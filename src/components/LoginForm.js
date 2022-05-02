@@ -32,7 +32,7 @@ function LoginForm() {
                     <input
                         className="formInput"
                         type="text"
-                        value={formData.firstName}
+                        value={formData.email}
                         onChange={handleInputChange}
                         id="Email"
                         placeholder="Email"
@@ -43,7 +43,7 @@ function LoginForm() {
                     <input
                         className="formInput"
                         type="text"
-                        value={formData.dateOfBirth}
+                        value={formData.password}
                         onChange={handleInputChange}
                         id="Password"
                         placeholder="Password"
